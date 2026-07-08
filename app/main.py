@@ -11,7 +11,11 @@ app = FastAPI(title="CookWise AI API")
 # CORS Configuration
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"], # Allow frontend access
+    allow_origins=[
+        "http://localhost:5173",
+        "http://localhost:3000",
+        "https://cooking-agent-front.vercel.app"
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
